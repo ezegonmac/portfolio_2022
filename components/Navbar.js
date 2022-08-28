@@ -68,7 +68,7 @@ const Logo = () => {
 }
 
 const Navbar = () => {
-    const {width, height} = useWindowDimensions()
+    const { width } = useWindowDimensions()
     const minWidth = 800
 
     return(
