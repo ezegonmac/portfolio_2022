@@ -4,6 +4,7 @@ import SectionSeparator from "../components/SectionSeparator"
 import TechnologiesSection from "../components/TechnologiesSection"
 import WelcomeSection from "../components/WelcomeSection"
 import { faReact, faJs, faJava, faPython } from "@fortawesome/free-brands-svg-icons"
+import Footer from "../components/Footer"
 
 export default function Home() {
 
@@ -101,6 +102,8 @@ export default function Home() {
       <SectionSeparator type="Projects"/>
 
       <TechnologiesSection technologies={technologies}/>
+
+      <Footer/>
     </div>
   )
 }
