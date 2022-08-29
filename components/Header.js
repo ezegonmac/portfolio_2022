@@ -9,9 +9,10 @@ const HeaderWrapper = styled.span`
     align-items: flex-end;
     margin-inline: 1.5rem;
     color: var(--white);
-
+    
     & h1 {
         margin-bottom: 0;
+        text-shadow: 3px 3px 2px rgba(10,10,10,0.2);
     }
 
 `

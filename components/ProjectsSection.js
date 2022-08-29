@@ -3,7 +3,6 @@ import Section from "./Section"
 import Link from "next/link"
 
 const CardStyled = styled.div`
-    background-color: pink;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,12 +10,13 @@ const CardStyled = styled.div`
     & img {
         width: 100%;
         max-height: 75%;
+        box-shadow: 4px 4px 0 0 var(--clr-5);
     }
 
     & p {
         width: 100%;
         text-align: end;
-        color: magenta;
+        color: var(--clr-5);
         margin: 0;
         padding-right: 0.5em;
         font-weight: 500;

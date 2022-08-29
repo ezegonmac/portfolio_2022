@@ -9,16 +9,16 @@ const SectionWrapper = styled.div`
 const TwoColsSection = styled.section`
     display: grid;
     padding-block: 2rem;
-    min-height: 70vh;
+    min-height: 75vh;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 `
 
 const Grid = styled.section`
     display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
 	grid-auto-rows: 10rem;
 	gap: 5rem;
-    padding: 5rem;
+    padding: 3rem;
     `
 
 const SmallGrid = styled.section`

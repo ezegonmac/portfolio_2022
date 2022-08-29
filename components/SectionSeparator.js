@@ -12,8 +12,9 @@ const SectionSeparator = (props) => {
     const styles = {
         "Welcome" : {
             img: "/separator.jpg",
-            height: 160,
-            background: "linear-gradient(0deg, var(--clr-1) 0%, rgba(255,255,255,1) 70%)",
+            height: 60,
+            background: "var(--clr-1)",
+            // background: "linear-gradient(0deg, var(--clr-1) 0%, rgba(255,255,255,1) 70%)",
         },
         "Projects" : {
             img: "/separator.jpg",
