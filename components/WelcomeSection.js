@@ -1,17 +1,14 @@
 import styled from "styled-components"
+import Section from "./Section"
+// import SectionWrapper from "./SectionWrapper"
 
-const SectionWrapper = styled.div`
-    padding-inline: 12%;
-    background-color: indigo;
-`
-
-const Section = styled.section`
-    display: grid;
-    grid-template-columns: 1fr 1.618fr;
-    background-color: lightcoral;
-    padding: 2em;
-    min-height: 90vh;
-`
+// const Section = styled.section`
+//     display: grid;
+//     grid-template-columns: 1fr 1.618fr;
+//     background-color: lightcoral;
+//     padding: 2em;
+//     min-height: 90vh;
+// `
 
 const ModelWrapper = styled.div`
     background-color: red;
@@ -42,20 +39,18 @@ const Paragraph = styled.p`
 
 const WelcomeSection = () => {
     return(
-        <SectionWrapper>
-            <Section>
-                <ModelWrapper></ModelWrapper>
-                <RightSection>
-                    <Header>
-                        Hi, I am Ezequiel
-                    </Header>
-                    <Paragraph>
-                        I am an enthusiastic software student finishing his career in Seville, Spain
-                        I am currently trying to get better at react, coding creative web apps like this and some others shown down below
-                    </Paragraph>
-                </RightSection>
-            </Section>
-        </SectionWrapper>
+        <Section variant={"TwoCols"} background={"red"}>
+            <ModelWrapper></ModelWrapper>
+            <RightSection>
+                <Header>
+                    Hi, I am Ezequiel
+                </Header>
+                <Paragraph>
+                    I am an enthusiastic software student finishing his career in Seville, Spain
+                    I am currently trying to get better at react, coding creative web apps like this and some others shown down below
+                </Paragraph>
+            </RightSection>
+        </Section>
     )
 }
 
