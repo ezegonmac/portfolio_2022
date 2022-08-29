@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import ProjectsSection from "../components/ProjectsSection";
 import SectionSeparator from "../components/SectionSeparator";
+import TechnologiesSection from "../components/TechnologiesSection";
 import WelcomeSection from "../components/WelcomeSection";
 
 export default function Home() {
@@ -43,12 +44,62 @@ export default function Home() {
     },
   ]
 
+  const technologies = [
+    {
+      name: "React",
+      color: "lightblue",
+      icon: "Logo.jpg",
+      link: "/",
+    },
+    {
+      name: "Next JS",
+      color: "lightgreen",
+      icon: "Logo.jpg",
+      link: "/",
+    },
+    {
+      name: "Javascript",
+      color: "violet",
+      icon: "Logo.jpg",
+      link: "/",
+    },
+    {
+      name: "Java",
+      color: "orange",
+      icon: "Logo.jpg",
+      link: "/",
+    },
+    {
+      name: "C",
+      color: "coral",
+      icon: "Logo.jpg",
+      link: "/",
+    },
+    {
+      name: "Python",
+      color: "yellow",
+      icon: "Logo.jpg",
+      link: "/",
+    },
+    {
+      name: "Python2",
+      color: "yellow",
+      icon: "Logo.jpg",
+      link: "/",
+    },
+  ]
+
   return (
     <div style={{backgroundColor: "grey", height: "100vh"}}>
       <Navbar/>
+
       <WelcomeSection/>
       <SectionSeparator type="Welcome"/>
+
       <ProjectsSection projects={projects}/>
+      <SectionSeparator type="Projects"/>
+
+      <TechnologiesSection technologies={technologies}/>
     </div>
   )
 }

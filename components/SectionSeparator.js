@@ -13,6 +13,10 @@ const SectionSeparator = (props) => {
             img: "/separator.jpg",
             height: 120,
         },
+        "Projects" : {
+            img: "/separator.jpg",
+            height: 80,
+        },
     }
 
     const style = styles[props.type]
