@@ -10,7 +10,7 @@ const TwoColsSection = styled.section`
     display: grid;
     padding-block: 2rem;
     min-height: 90vh;
-    grid-template-columns: 1fr 1.618fr;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 `
 
 const Grid = styled.section`

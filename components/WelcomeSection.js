@@ -4,9 +4,17 @@ import Section from "./Section"
 const ModelWrapper = styled.div`
     background-color: pink;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 2rem;
+
+    & img {
+        width: clamp(10rem, 50%, 10rem);
+    }
 `
 
 const RightSection = styled.div`
+    grid-column: span 2;
     background-color: aqua;
     padding: 2em;
     display: flex;
@@ -31,7 +39,9 @@ const Paragraph = styled.p`
 const WelcomeSection = () => {
     return(
         <Section variant={"TwoCols"} background={"red"}>
-            <ModelWrapper></ModelWrapper>
+            <ModelWrapper>
+                <img src="/rubiks.png"/>
+            </ModelWrapper>
             <RightSection>
                 <Header>
                     Hi, I am Ezequiel
