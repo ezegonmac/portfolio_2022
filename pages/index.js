@@ -1,8 +1,9 @@
-import Navbar from "../components/Navbar";
-import ProjectsSection from "../components/ProjectsSection";
-import SectionSeparator from "../components/SectionSeparator";
-import TechnologiesSection from "../components/TechnologiesSection";
-import WelcomeSection from "../components/WelcomeSection";
+import Navbar from "../components/Navbar"
+import ProjectsSection from "../components/ProjectsSection"
+import SectionSeparator from "../components/SectionSeparator"
+import TechnologiesSection from "../components/TechnologiesSection"
+import WelcomeSection from "../components/WelcomeSection"
+import { faReact, faJs, faJava, faPython } from "@fortawesome/free-brands-svg-icons"
 
 export default function Home() {
 
@@ -48,7 +49,7 @@ export default function Home() {
     {
       name: "React",
       color: "lightblue",
-      icon: "Logo.jpg",
+      icon: faReact,
       link: "/",
     },
     {
@@ -60,13 +61,13 @@ export default function Home() {
     {
       name: "Javascript",
       color: "violet",
-      icon: "Logo.jpg",
+      icon: faJs,
       link: "/",
     },
     {
       name: "Java",
       color: "orange",
-      icon: "Logo.jpg",
+      icon: faJava,
       link: "/",
     },
     {
@@ -78,7 +79,7 @@ export default function Home() {
     {
       name: "Python",
       color: "yellow",
-      icon: "Logo.jpg",
+      icon: faPython,
       link: "/",
     },
     {

@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import Section from "./Section"
 import Link from "next/link"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const CardStyled = styled.div`
-    background-color: white;
+    background-color: darkblue;
     aspect-ratio: 1;
     border-radius: 50%;
     overflow: hidden;
@@ -12,8 +13,9 @@ const CardStyled = styled.div`
     align-items: center;
     justify-content: center;
 
-    & img {
-        width: 100%;
+    & * {
+        width: 60%;
+        height: 60%;
     }
 
     &:hover {
@@ -26,7 +28,7 @@ const Card = ({ technology }) => {
     return(
         <CardStyled color={technology.color}>
                 <Link href={technology.link}>
-                    <img src={technology.icon}></img>
+                    <FontAwesomeIcon icon={technology.icon} inverse/>
                 </Link>
         </CardStyled>
     )
