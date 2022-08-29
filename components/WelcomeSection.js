@@ -2,24 +2,23 @@ import styled from "styled-components"
 import Section from "./Section"
 
 const ModelWrapper = styled.div`
-    background-color: pink;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-block: 2rem;
 
     & img {
-        width: clamp(10rem, 50%, 10rem);
+        width: clamp(5rem, 75%, 25rem);
     }
 `
 
 const RightSection = styled.div`
     grid-column: span 2;
-    background-color: aqua;
     padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
     text-align: end;
 `
 
@@ -29,16 +28,20 @@ const Header = styled.div`
     line-height: 1em;
     display: inline;
     margin-bottom: 0.4em;
+    color: var(--black);
+    max-width: 5em;
 `
 
 const Paragraph = styled.p`
     font-size: 1.2rem;
     line-height: 1.3em;
+    color: var(--clr-3);
+    max-width: 30em;
 `
 
 const WelcomeSection = () => {
     return(
-        <Section variant={"TwoCols"} background={"red"}>
+        <Section variant={"TwoCols"} background={"var(--white)"}>
             <ModelWrapper>
                 <img src="/rubiks.png"/>
             </ModelWrapper>
@@ -47,7 +50,7 @@ const WelcomeSection = () => {
                     Hi, I am Ezequiel
                 </Header>
                 <Paragraph>
-                    I am an enthusiastic software student finishing his career in Seville, Spain
+                    I am an enthusiastic software student finishing his career in Seville, Spain.
                     I am currently trying to get better at react, coding creative web apps like this and some others shown down below
                 </Paragraph>
             </RightSection>

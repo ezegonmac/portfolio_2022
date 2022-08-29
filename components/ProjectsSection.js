@@ -43,7 +43,7 @@ const Card = ({ project }) => {
 const ProjectsSection = ({ projects }) => {
 
     return(
-        <Section variant={"Grid"} background={"grey"} header={"Recent Projects"}>
+        <Section variant={"Grid"} background={"var(--clr-1)"} header={"Recent Projects"}>
             {projects.map(
                 p => 
                 <Card project={p} key={p.title}/>)}

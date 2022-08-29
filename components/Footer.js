@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const FooterStyled = styled.footer`
-    background-color: grey;
+    background-color: var(--clr-1);
     display: flex;
     align-items: center;
     justify-content: center;

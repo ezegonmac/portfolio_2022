@@ -4,14 +4,13 @@ import Link from "next/link"
 import useWindowDimensions from "../hooks/useWindowDimensions"
 
 const NavbarStyled = styled.div`
-    background-color: red;
+    background-color: var(--clr-1);
     color: white;
     display: flex;
     justify-content: space-between;
 `
 
 const LogoStyled = styled.div`
-    background-color: green;
     display: flex;
 `
 
@@ -22,18 +21,17 @@ const NavigationStyled = styled.ul`
 `
 
 const NavLinkStyled = styled.li`
-    background-color: yellow;
     font-weight: bold;
     width: max-content;
     display: flex;
     padding: 1.4em 2.4em 0.7em 2.4em ;
 
     & a {
-        color: purple;
+        color: var(--white);
         padding: 3px;
         
         &:hover {
-            color: white;
+            color: var(--clr-5);
         }
     }
 `

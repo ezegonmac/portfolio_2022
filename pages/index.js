@@ -84,8 +84,14 @@ export default function Home() {
       link: "/",
     },
     {
-      name: "Python2",
-      color: "yellow",
+      name: "C#",
+      color: "coral",
+      icon: "Logo.jpg",
+      link: "/",
+    },
+    {
+      name: "R",
+      color: "lightgreen",
       icon: "Logo.jpg",
       link: "/",
     },

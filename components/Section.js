@@ -2,14 +2,14 @@ import styled from "styled-components"
 import Header from "/components/Header.js"
 
 const SectionWrapper = styled.div`
-    padding-inline: 12%;
+    padding-inline: 16%;
     background: ${props => props.background};
 `
 
 const TwoColsSection = styled.section`
     display: grid;
     padding-block: 2rem;
-    min-height: 90vh;
+    min-height: 70vh;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 `
 
