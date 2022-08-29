@@ -1,17 +1,8 @@
 import styled from "styled-components"
 import Section from "./Section"
-// import SectionWrapper from "./SectionWrapper"
-
-// const Section = styled.section`
-//     display: grid;
-//     grid-template-columns: 1fr 1.618fr;
-//     background-color: lightcoral;
-//     padding: 2em;
-//     min-height: 90vh;
-// `
 
 const ModelWrapper = styled.div`
-    background-color: red;
+    background-color: pink;
     display: flex;
 `
 
@@ -30,7 +21,7 @@ const Header = styled.div`
     line-height: 1em;
     display: inline;
     margin-bottom: 0.4em;
-    `
+`
 
 const Paragraph = styled.p`
     font-size: 1.2rem;
