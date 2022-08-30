@@ -79,7 +79,7 @@ export default function Home() {
     },
     {
       name: "Python",
-      color: "yellow",
+      color: "#f3df26",
       icon: faPython,
       link: "/",
     },
@@ -92,6 +92,18 @@ export default function Home() {
     {
       name: "R",
       color: "lightgreen",
+      icon: "Logo.jpg",
+      link: "/",
+    },
+    {
+      name: "styled-components",
+      color: "violet",
+      icon: "Logo.jpg",
+      link: "/",
+    },
+    {
+      name: "React Router",
+      color: "lightblue",
       icon: "Logo.jpg",
       link: "/",
     },

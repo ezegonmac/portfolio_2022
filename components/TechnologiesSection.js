@@ -4,14 +4,15 @@ import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const CardStyled = styled.div`
-    background-color: darkblue;
+    border: solid 0.3em white;
+    background-color: ${props => props.color};
     aspect-ratio: 1;
     border-radius: 50%;
     overflow: hidden;
-    border: solid 0.3rem ${props => props.color};
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: inset 3px 3px 2px 0 rgb(100 100 100/ 20%);
 
     & * {
         width: 60%;

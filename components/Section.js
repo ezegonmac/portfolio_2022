@@ -22,8 +22,8 @@ const Grid = styled.section`
 
 const SmallGrid = styled.section`
     display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-	grid-auto-rows: 6rem;
+	grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+	grid-auto-rows: 4rem;
 	gap: 3.5rem;
     padding-inline: 12rem;
     padding-block: 5rem;
