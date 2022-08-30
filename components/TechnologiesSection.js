@@ -13,6 +13,7 @@ const CardStyled = styled.div`
     align-items: center;
     justify-content: center;
     box-shadow: inset 3px 3px 2px 0 rgb(100 100 100/ 20%);
+    height: 100%;
 
     & * {
         width: 60%;

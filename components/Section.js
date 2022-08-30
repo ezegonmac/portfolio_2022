@@ -15,17 +15,18 @@ const TwoColsSection = styled.section`
 const Grid = styled.section`
     display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
-	grid-auto-rows: 8.5rem;
-	gap: 5rem;
-    padding: 3rem;
-    `
+	gap: 4.5rem;
+    padding: 8rem 2rem 8rem 2rem;
+`
 
 const SmallGrid = styled.section`
     display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
-	grid-auto-rows: 4rem;
-	gap: 3.5rem;
-    padding-inline: 12rem;
+	grid-template-columns: repeat(auto-fit, minmax(1rem, 4rem));
+	grid-auto-rows: clamp(3rem,7vw,8rem);
+	gap: max(0.5em, 5vw);
+    padding-inline: clamp(0.1rem, 20%, 12rem);
+    align-items: center;
+    justify-items: center;
     padding-block: 5rem;
 `
 

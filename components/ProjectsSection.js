@@ -20,6 +20,7 @@ const CardStyled = styled.div`
         text-align: end;
         color: var(--clr-5);
         margin: 0;
+        padding-top: 1em;
         padding-right: 0.5em;
         font-weight: 500;
         font-size: 1.1rem;

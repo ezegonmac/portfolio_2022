@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const HeaderWrapper = styled.span`
     width: 100%;
-    font-size: clamp(1rem, 8vw, 3rem);
+    font-size: clamp(1rem,5vw,3rem);
     font-weight: 900;
     transform: translateX(-4rem);
     display: flex;
