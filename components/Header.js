@@ -12,7 +12,7 @@ const HeaderWrapper = styled.span`
     
     & h1 {
         margin-bottom: 0;
-        text-shadow: 3px 3px 2px rgba(10,10,10,0.2);
+        text-shadow: 3px 3px 2px rgb(10 10 10 / 20%);
     }
 
 `

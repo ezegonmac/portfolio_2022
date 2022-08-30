@@ -105,7 +105,6 @@ export default function Home() {
       <SectionSeparator type="Welcome"/>
 
       <ProjectsSection projects={projects}/>
-      <SectionSeparator type="Projects"/>
 
       <TechnologiesSection technologies={technologies}/>
 
