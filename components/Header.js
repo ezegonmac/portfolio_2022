@@ -17,10 +17,10 @@ const HeaderWrapper = styled.span`
 
 `
 
-const Header = ({ text }) => {
+const Header = ({ children }) => {
     return(
         <HeaderWrapper>
-            <h1>{ text }</h1>
+            <h1>{ children }</h1>
         </HeaderWrapper>
     )
 }

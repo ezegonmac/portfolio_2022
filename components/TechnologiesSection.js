@@ -1,8 +1,19 @@
 import styled from "styled-components"
 import Section from "./Section"
 import Link from "next/link"
-import { SmallGrid } from "./Section"
+import Header from "./Header"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+const SmallGrid = styled.section`
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(1rem, 4rem));
+	grid-auto-rows: clamp(3rem,7vw,8rem);
+	gap: max(0.5em, 5vw);
+    padding-inline: clamp(0.1rem, 20%, 12rem);
+    align-items: center;
+    justify-items: center;
+    padding-top: 5rem;
+`
 
 const CardStyled = styled.div`
     border: solid 0.3em white;
@@ -44,23 +55,25 @@ const Card = ({ technology }) => {
 
 const TechnologiesSection = ({ technologyGroups }) => {
     return(
-        <Section 
-            variant={"SmallGrid"} 
-            background={"salmon"} 
-            header={"Technologies"}
-        >
+        <Section background={"var(--clr-5)"} >
+                
+            <Header>Technologies</Header>
+
             {
                 technologyGroups.map( 
                     (group, i) => 
+
                     <SmallGrid key={i}>
                         { 
                             group.map(
                                 technology =>
+
                                 <Card technology={technology} key={technology.name}/>
                             )}
                     </SmallGrid>
                 )
             }
+        
         </Section>
     )
 }

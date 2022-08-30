@@ -1,6 +1,14 @@
 import styled from "styled-components"
 import Section from "./Section"
 import Link from "next/link"
+import Header from "./Header"
+
+const GridSection = styled.section`
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+	gap: 4.5rem;
+    padding: 8rem 2rem 8rem 2rem;
+`
 
 const CardStyled = styled.div`
     display: flex;
@@ -46,10 +54,16 @@ const Card = ({ project }) => {
 const ProjectsSection = ({ projects }) => {
 
     return(
-        <Section variant={"Grid"} background={"var(--clr-1)"} header={"Recent Projects"}>
-            {projects.map(
-                p => 
-                <Card project={p} key={p.title}/>)}
+        <Section background={"var(--clr-1)"} >
+            
+            <Header>Recent Projects</Header>
+            
+            <GridSection>
+                {projects.map(
+                    p =>
+                    <Card project={p} key={p.title}/>)}
+            </GridSection>
+        
         </Section>
     )
 }

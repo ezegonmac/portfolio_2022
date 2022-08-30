@@ -1,6 +1,12 @@
 import styled from "styled-components"
 import Section from "./Section"
 
+const TwoColsSection = styled.section`
+    display: grid;
+    min-height: 75vh;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+`
+
 const ModelWrapper = styled.div`
     display: flex;
     align-items: center;
@@ -41,19 +47,24 @@ const Paragraph = styled.p`
 
 const WelcomeSection = () => {
     return(
-        <Section variant={"TwoCols"} background={"var(--white)"}>
-            <ModelWrapper>
-                <img src="/rubiks.png"/>
-            </ModelWrapper>
-            <RightSection>
-                <Header>
-                    Hi, I am Ezequiel
-                </Header>
-                <Paragraph>
-                    I am an enthusiastic software student finishing his career in Seville, Spain.
-                    I am currently trying to get better at react, coding creative web apps like this and some others shown down below
-                </Paragraph>
-            </RightSection>
+        <Section background={"var(--white)"}>
+            <TwoColsSection>
+
+                <ModelWrapper>
+                    <img src="/rubiks.png"/>
+                </ModelWrapper>
+
+                <RightSection>
+                    <Header>
+                        Hi, I am Ezequiel
+                    </Header>
+                    <Paragraph>
+                        I am an enthusiastic software student finishing his career in Seville, Spain.
+                        I am currently trying to get better at react, coding creative web apps like this and some others shown down below
+                    </Paragraph>
+                </RightSection>
+
+            </TwoColsSection>
         </Section>
     )
 }
