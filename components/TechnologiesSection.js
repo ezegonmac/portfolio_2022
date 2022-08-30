@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Section from "./Section"
 import Link from "next/link"
+import { SmallGrid } from "./Section"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const CardStyled = styled.div`
@@ -30,18 +31,36 @@ const Card = ({ technology }) => {
     return(
         <CardStyled color={technology.color}>
                 <Link href={technology.link}>
-                    <FontAwesomeIcon icon={technology.icon} inverse/>
+                    {
+                        technology.icon ? 
+                        <FontAwesomeIcon icon={technology.icon} inverse/>
+                        :
+                        <img src={technology.img}/>
+                    }
                 </Link>
         </CardStyled>
     )
 }
 
-const TechnologiesSection = ({ technologies }) => {
+const TechnologiesSection = ({ technologyGroups }) => {
     return(
-        <Section variant={"SmallGrid"} background={"salmon"} header={"Technologies"}>
-            {technologies.map(
-                t => 
-                <Card technology={t} key={t.name}/>)}
+        <Section 
+            variant={"SmallGrid"} 
+            background={"salmon"} 
+            header={"Technologies"}
+        >
+            {
+                technologyGroups.map( 
+                    (group, i) => 
+                    <SmallGrid key={i}>
+                        { 
+                            group.map(
+                                technology =>
+                                <Card technology={technology} key={technology.name}/>
+                            )}
+                    </SmallGrid>
+                )
+            }
         </Section>
     )
 }

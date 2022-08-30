@@ -3,7 +3,7 @@ import ProjectsSection from "../components/ProjectsSection"
 import SectionSeparator from "../components/SectionSeparator"
 import TechnologiesSection from "../components/TechnologiesSection"
 import WelcomeSection from "../components/WelcomeSection"
-import { faReact, faJs, faJava, faPython } from "@fortawesome/free-brands-svg-icons"
+import { faReact, faJs, faJava, faPython, faCss3, faHtml5 } from "@fortawesome/free-brands-svg-icons"
 import Footer from "../components/Footer"
 
 export default function Home() {
@@ -47,66 +47,78 @@ export default function Home() {
   ]
 
   const technologies = [
-    {
-      name: "React",
-      color: "lightblue",
-      icon: faReact,
-      link: "/",
-    },
-    {
-      name: "Next JS",
-      color: "lightgreen",
-      icon: "Logo.jpg",
-      link: "/",
-    },
-    {
-      name: "Javascript",
-      color: "violet",
-      icon: faJs,
-      link: "/",
-    },
-    {
-      name: "Java",
-      color: "orange",
-      icon: faJava,
-      link: "/",
-    },
-    {
-      name: "C",
-      color: "coral",
-      icon: "Logo.jpg",
-      link: "/",
-    },
-    {
-      name: "Python",
-      color: "#f3df26",
-      icon: faPython,
-      link: "/",
-    },
-    {
-      name: "C#",
-      color: "coral",
-      icon: "Logo.jpg",
-      link: "/",
-    },
-    {
-      name: "R",
-      color: "lightgreen",
-      icon: "Logo.jpg",
-      link: "/",
-    },
-    {
-      name: "styled-components",
-      color: "violet",
-      icon: "Logo.jpg",
-      link: "/",
-    },
-    {
-      name: "React Router",
-      color: "lightblue",
-      icon: "Logo.jpg",
-      link: "/",
-    },
+    [
+      {
+        name: "Javascript",
+        color: "violet",
+        icon: faJs,
+        link: "/",
+      },
+      {
+        name: "Java",
+        color: "orange",
+        icon: faJava,
+        link: "/",
+      },
+      {
+        name: "Python",
+        color: "#f3df26",
+        icon: faPython,
+        link: "/",
+      },
+      {
+        name: "C",
+        color: "coral",
+        icon: null,
+        img: "/technologies/c.png",
+        link: "/",
+      },
+      {
+        name: "R",
+        color: "lightgreen",
+        icon: null,
+        img: "/technologies/r.png",
+        link: "/",
+      },
+    ],
+    [
+      {
+        name: "Css",
+        color: "lightblue",
+        icon: faCss3,
+        link: "/",
+      },
+      {
+        name: "Html",
+        color: "orange",
+        icon: faHtml5,
+        link: "/",
+      },    
+      {
+        name: "React",
+        color: "lightblue",
+        icon: faReact,
+        link: "/",
+      },
+      {
+        name: "Next JS",
+        color: "lightgreen",
+        icon: "Logo.jpg",
+        link: "/",
+      },    
+      {
+        name: "Styled Components",
+        color: "violet",
+        icon: "Logo.jpg",
+        link: "/",
+      },
+      {
+        name: "React Router",
+        color: "lightblue",
+        icon: "Logo.jpg",
+        link: "/",
+      },
+    ]
   ]
 
   return (
@@ -118,7 +130,8 @@ export default function Home() {
 
       <ProjectsSection projects={projects}/>
 
-      <TechnologiesSection technologies={technologies}/>
+      <TechnologiesSection technologyGroups={technologies}/>
+      <SectionSeparator type="Technologies"/>
 
       <Footer/>
     </div>

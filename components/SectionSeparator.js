@@ -15,6 +15,10 @@ const SectionSeparator = (props) => {
             background: "var(--white)",
             img: "/wave.svg",
         },
+        "Technologies" : {
+            height: 60,
+            background: "var(--clr-5)",
+        },
     }
 
     const style = styles[props.type]
@@ -23,7 +27,7 @@ const SectionSeparator = (props) => {
         <SectionSeparatorWrapper 
             height={style.height} 
             background={style.background}>
-            <img src={style.img} />
+            { style.img && <img src={style.img} /> }
         </SectionSeparatorWrapper>
     )
 }
