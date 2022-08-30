@@ -12,37 +12,37 @@ export default function Home() {
     {
       title: "Portfolio 2022",
       link: "https://github.com/ezegonmac/portfolio_2022",
-      img: "/Logo.jpg"
+      img: "/projects/portfolio.png"
     },
     {
       title: "Reactive TikTakToe",
       link: "https://ezegonmac.github.io/React-TikTakToe",
-      img: "/Logo.jpg"
+      img: "/projects/tiktaktoe.png"
     },
     {
       title: "Mandelbulb",
       link: "https://ezegonmac.github.io/3d-curves/",
-      img: "/Logo.jpg"
+      img: "/projects/mandelbulb.png"
     },
     {
       title: "Weights",
       link: "https://ezegonmac.github.io/weights_react/",
-      img: "/Logo.jpg"
+      img: "/projects/weights.png"
     },
     {
       title: "The Game Of Life",
       link: "https://codepen.io/ezquielgon2/pen/zYZmvmZ",
-      img: "/Logo.jpg"
+      img: "/projects/gameoflife.png"
     },
     {
       title: "React Gallery",
       link: "https://github.com/ezegonmac/react-gallery/",
-      img: "/Logo.jpg"
+      img: "/projects/reactgallery.png"
     },
     {
       title: "Seven Islands",
       link: "https://github.com/gii-is-DP1/dp1-2021-2022-l8-1/",
-      img: "/Logo.jpg"
+      img: "/projects/sevenislands.jpg"
     },
   ]
 

@@ -8,9 +8,11 @@ const CardStyled = styled.div`
     justify-content: space-between;
 
     & img {
-        width: 100%;
         max-height: 75%;
-        box-shadow: 4px 4px 0 0 var(--clr-5);
+        box-shadow: 4px 4px 1px 0 var(--clr-5-dark);
+        border: solid 1px var(--clr-5);
+        background-color: white;
+        border-radius: 1px;
     }
 
     & p {

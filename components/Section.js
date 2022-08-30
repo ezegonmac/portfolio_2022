@@ -15,7 +15,7 @@ const TwoColsSection = styled.section`
 const Grid = styled.section`
     display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
-	grid-auto-rows: 10rem;
+	grid-auto-rows: 8.5rem;
 	gap: 5rem;
     padding: 3rem;
     `
