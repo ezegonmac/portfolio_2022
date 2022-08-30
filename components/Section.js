@@ -7,9 +7,9 @@ const SectionStyled = styled.div`
     background: ${props => props.background};
 `
 
-const Section = ({ children, background }) => {
+const Section = ({ children, background, id }) => {
     return(
-        <SectionStyled background={background}>
+        <SectionStyled id={id} background={background}>
             { children }
         </SectionStyled>
     )

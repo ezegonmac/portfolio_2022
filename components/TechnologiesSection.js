@@ -12,7 +12,7 @@ const SmallGrid = styled.section`
     padding-inline: clamp(0.1rem, 20%, 12rem);
     align-items: center;
     justify-items: center;
-    padding-top: 5rem;
+    padding-block: 5rem 0.1rem;
 `
 
 const CardStyled = styled.div`
@@ -60,7 +60,7 @@ const Card = ({ technology }) => {
 
 const TechnologiesSection = ({ technologyGroups }) => {
     return(
-        <Section background={"var(--clr-5)"} >
+        <Section id={"technologies"} background={"var(--clr-5)"} >
                 
             <Header>Technologies</Header>
 

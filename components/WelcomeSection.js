@@ -47,7 +47,7 @@ const Paragraph = styled.p`
 
 const WelcomeSection = () => {
     return(
-        <Section background={"var(--white)"}>
+        <Section id={"welcome"} background={"var(--white)"}>
             <TwoColsSection>
 
                 <ModelWrapper>

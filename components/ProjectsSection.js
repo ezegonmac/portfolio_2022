@@ -56,7 +56,7 @@ const Card = ({ project }) => {
 const ProjectsSection = ({ projects }) => {
 
     return(
-        <Section background={"var(--clr-1)"} >
+        <Section id={"projects"} background={"var(--clr-1)"} >
             
             <Header>Recent Projects</Header>
 

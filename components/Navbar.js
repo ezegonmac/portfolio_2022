@@ -1,5 +1,5 @@
+import { useEffect, useRef } from "react"
 import styled from "styled-components"
-import Link from "next/link"
 import useWindowDimensions from "../hooks/useWindowDimensions"
 
 const NavbarStyled = styled.div`
@@ -43,12 +43,30 @@ const NavLinkStyled = styled.li`
     }
 `
 
-const NavLink = (props) => {
+const NavLink = ({ target, children }) => {
+
+    const link = useRef()
+
+    useEffect(() => {
+
+        if(link.current) {
+            link.current.addEventListener("click", (e) => {
+                e.preventDefault()
+
+                const element = document.getElementById(target)
+                element.scrollIntoView({ behavior: "smooth" })
+
+                console.log("hola")
+            })
+        }
+
+    }, [])
+
     return(
         <NavLinkStyled>
-            <Link {...props}>
-                {props.children}
-            </Link>
+            <a ref={link} >
+                {children}
+            </a>
         </NavLinkStyled>
     )
 }
@@ -56,10 +74,10 @@ const NavLink = (props) => {
 const Navigation = () => {
     return(
         <NavigationStyled>
-            <NavLink href={"/"}>Welcome</NavLink>
-            <NavLink href={"/biography"}>Biography</NavLink>
-            <NavLink href={"/recentProjects"}>Recent Projects</NavLink>
-            <NavLink href={"/technologies"}>Technologies</NavLink>
+            <NavLink target={"welcome"}>Welcome</NavLink>
+            <NavLink target={"biography"}>Biography</NavLink>
+            <NavLink target={"projects"}>Recent Projects</NavLink>
+            <NavLink target={"technologies"}>Technologies</NavLink>
         </NavigationStyled>
     )
 }
