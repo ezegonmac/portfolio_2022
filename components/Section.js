@@ -8,7 +8,6 @@ const SectionWrapper = styled.div`
 
 const TwoColsSection = styled.section`
     display: grid;
-    padding-block: 2rem;
     min-height: 75vh;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 `

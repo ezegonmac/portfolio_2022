@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import Image from "next/dist/client/image"
 import Link from "next/link"
 import useWindowDimensions from "../hooks/useWindowDimensions"
 
@@ -12,11 +11,17 @@ const NavbarStyled = styled.div`
 
 const LogoStyled = styled.div`
     display: flex;
+
+    & img {
+        width: 60px; 
+        height: 60px;
+    }
 `
 
 const NavigationStyled = styled.ul`
     list-style: none;
     display: flex;
+    padding-right: 2.5rem;
     margin: 0;
 `
 
@@ -24,12 +29,13 @@ const NavLinkStyled = styled.li`
     font-weight: bold;
     width: max-content;
     display: flex;
-    padding: 1.4em 2.4em 0.7em 2.4em ;
+    padding: 1.4em 2.2em 0.7em 2.2em ;
     
     & a {
         color: var(--clr-2-light);
         text-transform: lowercase;
-        padding: 3px;
+        padding: 5px;
+        font-size: 1.1rem;
         
         &:hover {
             color: var(--clr-6);
@@ -61,7 +67,7 @@ const Navigation = () => {
 const Logo = () => {
     return(
         <LogoStyled>
-            <Image src="/Logo.jpg" width={60} height={60}/>
+            <img src="/Logo.jpg"/>
         </LogoStyled>
     )
 }
