@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 const SectionStyled = styled.div`
     padding-inline: 16%;
+    position: relative;
     background: ${props => props.background};
 `
 

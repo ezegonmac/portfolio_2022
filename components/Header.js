@@ -9,6 +9,7 @@ const HeaderWrapper = styled.span`
     align-items: flex-end;
     margin-inline: 1.5rem;
     color: var(--white);
+    z-index: 1;
     
     & h1 {
         margin-bottom: 0;

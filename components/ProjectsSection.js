@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Section from "./Section"
 import Link from "next/link"
 import Header from "./Header"
+import { MiddleWaveDecoration } from "./Decorations"
 
 const GridSection = styled.section`
     display: grid;
@@ -14,6 +15,7 @@ const CardStyled = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 1;
 
     & img {
         max-height: 75%;
@@ -57,6 +59,8 @@ const ProjectsSection = ({ projects }) => {
         <Section background={"var(--clr-1)"} >
             
             <Header>Recent Projects</Header>
+
+            <MiddleWaveDecoration/>
             
             <GridSection>
                 {projects.map(
