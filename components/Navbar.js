@@ -29,13 +29,14 @@ const NavLinkStyled = styled.li`
     font-weight: bold;
     width: max-content;
     display: flex;
-    padding: 1.4em 2.2em 0.7em 2.2em ;
+    padding: 1.5em 2.2em 0.8em 2.3em ;
     
     & a {
         color: var(--clr-2-light);
         text-transform: lowercase;
-        padding: 5px;
+        padding: 2px;
         font-size: 1.1rem;
+        cursor: pointer;
         
         &:hover {
             color: var(--clr-6);
