@@ -27,9 +27,14 @@ const CardStyled = styled.div`
     box-shadow: inset 3px 3px 2px 0 rgb(100 100 100/ 20%);
     height: 100%;
 
-    & * {
+    & svg {
         width: 60%;
         height: 60%;
+    }
+
+    & img {
+        width: 80%;
+        height: 80%;
     }
 
     &:hover {
