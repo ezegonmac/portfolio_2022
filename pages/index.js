@@ -134,7 +134,15 @@ export default function Home() {
         img: "/technologies/redux.png",
         link: "/",
       },
-    ]
+    ],
+    [
+      {
+        name: "Spring",
+        color: "mediumseagreen",
+        img: "/technologies/spring.png",
+        link: "/",
+      },
+    ],
   ]
 
   return (

@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import Section from "./Section"
-import Link from "next/link"
 import Header from "./Header"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -26,15 +25,21 @@ const CardStyled = styled.div`
     justify-content: center;
     box-shadow: inset 3px 3px 2px 0 rgb(100 100 100/ 20%);
     height: 100%;
-
-    & svg {
-        width: 60%;
-        height: 60%;
+    
+    & a {
+        display: grid;
+        place-items: center;
+        height: 100%;
     }
 
+    & svg {
+        width: 57%;
+        height: 57%;
+    }
+    
     & img {
-        width: 80%;
-        height: 80%;
+        width: 70%;
+        height: 70%;
     }
 
     &:hover {
@@ -46,14 +51,14 @@ const CardStyled = styled.div`
 const Card = ({ technology }) => {
     return(
         <CardStyled color={technology.color}>
-                <Link href={technology.link}>
+                <a>
                     {
                         technology.icon ? 
                         <FontAwesomeIcon icon={technology.icon} inverse/>
                         :
                         <img src={technology.img}/>
                     }
-                </Link>
+                </a>
         </CardStyled>
     )
 }
