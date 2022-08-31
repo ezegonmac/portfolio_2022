@@ -12,6 +12,7 @@ const ModelWrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding-block: 2rem;
+    max-width: 25rem;
 
     & img {
         width: clamp(5rem, 75%, 25rem);
@@ -29,7 +30,7 @@ const RightSection = styled.div`
 `
 
 const Header = styled.div`
-    font-size: 5rem;
+    font-size: clamp(3.5rem, 10vw, 5rem);
     font-weight: bold;
     line-height: 1em;
     display: inline;
