@@ -58,7 +58,7 @@ const ProjectsSection = ({ projects }) => {
     return(
         <Section id={"projects"} background={"var(--clr-1)"} >
             
-            <Header>Recent Projects</Header>
+            <Header>Projects</Header>
 
             <MiddleWaveDecoration/>
             
