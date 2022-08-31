@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar"
 import ProjectsSection from "../components/ProjectsSection"
 import SectionSeparator from "../components/SectionSeparator"
 import TechnologiesSection from "../components/TechnologiesSection"
-import WelcomeSection from "../components/WelcomeSection"
+import HomeSection from "../components/HomeSection"
 import { faReact, faJs, faJava, faPython, faCss3, faHtml5 } from "@fortawesome/free-brands-svg-icons"
 import Footer from "../components/Footer"
 
@@ -149,7 +149,7 @@ export default function Home() {
     <div style={{backgroundColor: "grey", height: "100vh"}}>
       <Navbar/>
 
-      <WelcomeSection/>
+      <HomeSection/>
       <SectionSeparator type="Welcome"/>
 
       <ProjectsSection projects={projects}/>

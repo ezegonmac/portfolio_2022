@@ -46,9 +46,9 @@ const Paragraph = styled.p`
     max-width: 30em;
 `
 
-const WelcomeSection = () => {
+const HomeSection = () => {
     return(
-        <Section id={"welcome"} background={"var(--white)"}>
+        <Section id={"home"} background={"var(--white)"}>
             <TwoColsSection>
 
                 <ModelWrapper>
@@ -70,4 +70,4 @@ const WelcomeSection = () => {
     )
 }
 
-export default WelcomeSection
+export default HomeSection

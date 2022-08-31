@@ -75,7 +75,7 @@ const NavLink = ({ target, children }) => {
 const Navigation = () => {
     return(
         <NavigationStyled>
-            <NavLink target={"welcome"}>Welcome</NavLink>
+            <NavLink target={"home"}>Home</NavLink>
             {/* <NavLink target={"biography"}>Biography</NavLink> */}
             <NavLink target={"projects"}>Recent Projects</NavLink>
             <NavLink target={"technologies"}>Technologies</NavLink>
