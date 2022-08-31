@@ -41,7 +41,7 @@ export default function Home() {
     },
     {
       title: "Seven Islands",
-      link: "https://github.com/gii-is-DP1/dp1-2021-2022-l8-1/",
+      link: "https://github.com/ezegonmac/dp1-2021-2022-l8-1/",
       img: "/projects/sevenislands.jpg"
     },
   ]
