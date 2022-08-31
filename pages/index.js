@@ -5,6 +5,7 @@ import TechnologiesSection from "../components/TechnologiesSection"
 import HomeSection from "../components/HomeSection"
 import { faReact, faJs, faJava, faPython, faCss3, faHtml5 } from "@fortawesome/free-brands-svg-icons"
 import Footer from "../components/Footer"
+import Head from "next/head"
 
 export default function Home() {
 
@@ -147,6 +148,10 @@ export default function Home() {
 
   return (
     <div style={{backgroundColor: "grey", height: "100vh"}}>
+      <Head>
+        <title>ezegonmac</title>
+      </Head>
+
       <Navbar/>
 
       <HomeSection/>
