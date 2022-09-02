@@ -10,6 +10,7 @@ const TwoColsSection = styled.section`
     display: grid;
     min-height: 75vh;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    padding-top: 3rem;
 `
 
 const ModelWrapper = styled(motion.div)`
