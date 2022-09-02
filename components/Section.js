@@ -1,15 +1,15 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
-const SectionStyled = styled.div`
+const SectionStyled = styled(motion.div)`
     padding-inline: 16%;
     position: relative;
-    overflow: hidden;
     background: ${props => props.background};
 `
 
-const Section = ({ children, background, id }) => {
+const Section = ({ children, background, id, ...props }) => {
     return(
-        <SectionStyled id={id} background={background}>
+        <SectionStyled id={id} background={background} {...props}>
             { children }
         </SectionStyled>
     )

@@ -155,7 +155,6 @@ export default function Home() {
       <Navbar/>
 
       <HomeSection/>
-      <SectionSeparator type="Welcome"/>
 
       <ProjectsSection projects={projects}/>
 

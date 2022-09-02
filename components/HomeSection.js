@@ -1,7 +1,10 @@
 import { MotionConfig } from "framer-motion"
 import styled from "styled-components"
 import Section from "./Section"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
+import SectionSeparator from "./SectionSeparator"
+import { useRef } from "react"
+import Parallax from "./Parallax"
 
 const TwoColsSection = styled.section`
     display: grid;
@@ -78,41 +81,59 @@ const rightSectionVariants = {
 const textVariants = {
         hidden: { opacity: 0, translateY: "25%"},
         visible: { opacity: 1, translateY: 0, transition: {duration: 0.5}},
-    }
+}
+
+const useParallax = (value, distance) => {
+    return useTransform(value, [0, 1], [-distance, distance]);
+}
 
 const HomeSection = () => {
+    // const separator = useRef(null);
+    // const { scrollYProgress } = useScroll({ target: separator });
+    // const y = useParallax(scrollYProgress, 100);
+
     return(
-        <Section id={"home"} background={"var(--white)"}>
-            <TwoColsSection>
+        <>
+            <Section id={"home"} background={"var(--white)"} 
+            // style={{ y }}
+            >
+                <Parallax offset={100}>
+                <TwoColsSection>
 
-                <ModelWrapper
-                    variants={modelWrapperVariants}
-                    initial="hidden"
-                    animate="visible"
-                    >
-                    <img src="/rubiks.png"/>
-                </ModelWrapper>
-
-                <RightSection
-                    variants={rightSectionVariants}
-                    initial="hidden"
-                    animate="visible"
-                    >
-                    <Header
-                        variants={textVariants}
+                    <ModelWrapper
+                        variants={modelWrapperVariants}
+                        initial="hidden"
+                        animate="visible"
                         >
-                        Hi, I am Ezequiel
-                    </Header>
-                    <Paragraph
-                        variants={textVariants}
-                        >
-                        I am an enthusiastic software student finishing his career in Seville, Spain.
-                        I am currently trying to get better at react, coding creative web apps like this and some others shown down below
-                    </Paragraph>
-                </RightSection>
+                        <img src="/rubiks.png"/>
+                    </ModelWrapper>
 
-            </TwoColsSection>
-        </Section>
+                    <RightSection
+                        variants={rightSectionVariants}
+                        initial="hidden"
+                        animate="visible"
+                        >
+                        <Header
+                            variants={textVariants}
+                            >
+                            Hi, I am Ezequiel
+                        </Header>
+                        <Paragraph
+                            variants={textVariants}
+                            >
+                            I am an enthusiastic software student finishing his career in Seville, Spain.
+                            I am currently trying to get better at react, coding creative web apps like this and some others shown down below
+                        </Paragraph>
+                    </RightSection>
+
+                </TwoColsSection>
+                </Parallax>
+            </Section>
+            
+            <SectionSeparator type="Welcome" 
+            // ref={separator}
+            />
+        </>
     )
 }
 
