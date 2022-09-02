@@ -1,5 +1,7 @@
+import { MotionConfig } from "framer-motion"
 import styled from "styled-components"
 import Section from "./Section"
+import { motion } from "framer-motion"
 
 const TwoColsSection = styled.section`
     display: grid;
@@ -7,7 +9,7 @@ const TwoColsSection = styled.section`
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 `
 
-const ModelWrapper = styled.div`
+const ModelWrapper = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +21,19 @@ const ModelWrapper = styled.div`
     }
 `
 
-const RightSection = styled.div`
+const modelWrapperVariants = {
+    hidden: { 
+        opacity: 0
+    },
+    visible: { opacity: 1, 
+        transition: {
+            duration: 0.7,
+            delay: 1.8,
+        }
+    },
+}
+
+const RightSection = styled(motion.div)`
     grid-column: span 2;
     padding: 2em;
     display: flex;
@@ -29,7 +43,7 @@ const RightSection = styled.div`
     text-align: end;
 `
 
-const Header = styled.div`
+const Header = styled(motion.div)`
     font-size: clamp(3.5rem, 10vw, 5rem);
     font-weight: bold;
     line-height: 1em;
@@ -39,27 +53,59 @@ const Header = styled.div`
     max-width: 5em;
 `
 
-const Paragraph = styled.p`
+const Paragraph = styled(motion.p)`
     font-size: 1.2rem;
     line-height: 1.3em;
     color: var(--clr-3);
     max-width: 30em;
 `
 
+const rightSectionVariants = {
+    hidden: {
+        transition: {
+            when: "afterChildren",
+        },
+    },
+    visible: {
+        transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.5,
+            delayChildren: 0.8
+        },
+    },
+}
+
+const textVariants = {
+        hidden: { opacity: 0, translateY: "25%"},
+        visible: { opacity: 1, translateY: 0, transition: {duration: 0.5}},
+    }
+
 const HomeSection = () => {
     return(
         <Section id={"home"} background={"var(--white)"}>
             <TwoColsSection>
 
-                <ModelWrapper>
+                <ModelWrapper
+                    variants={modelWrapperVariants}
+                    initial="hidden"
+                    animate="visible"
+                    >
                     <img src="/rubiks.png"/>
                 </ModelWrapper>
 
-                <RightSection>
-                    <Header>
+                <RightSection
+                    variants={rightSectionVariants}
+                    initial="hidden"
+                    animate="visible"
+                    >
+                    <Header
+                        variants={textVariants}
+                        >
                         Hi, I am Ezequiel
                     </Header>
-                    <Paragraph>
+                    <Paragraph
+                        variants={textVariants}
+                        >
                         I am an enthusiastic software student finishing his career in Seville, Spain.
                         I am currently trying to get better at react, coding creative web apps like this and some others shown down below
                     </Paragraph>
