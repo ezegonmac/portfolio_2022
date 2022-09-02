@@ -1,21 +1,27 @@
-import { useEffect, useRef } from "react"
 import styled from "styled-components"
 import useWindowDimensions from "../hooks/useWindowDimensions"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
+import useScrollIntoView from "../hooks/useScrollIntoView"
+import { useEffect } from "react"
 
 const NavbarStyled = styled.div`
+    position: fixed;
+    left: 0;
+    right: 0;
     background-color: var(--white);
     color: white;
     display: flex;
     justify-content: space-between;
+    z-index: 5;
+    font-size: 1rem;
 `
 
 const LogoStyled = styled.div`
     display: flex;
 
     & img {
-        width: 60px; 
-        height: 60px;
+        width: 4em;
+        height: 4em;
     }
 `
 
@@ -64,25 +70,13 @@ const linkVariants = {
     visible: { opacity: 1, translateY: 0, transition: {duration: 0.7}},
 }
 
-const NavLink = ({ target, children }) => {
+const NavLink = ({ targetId, children }) => {
 
-    const link = useRef()
-
-    useEffect(() => {
-
-        if(link.current) {
-            link.current.addEventListener("click", (e) => {
-                e.preventDefault()
-
-                const element = document.getElementById(target)
-                element.scrollIntoView({ behavior: "smooth" })
-            })
-        }
-
-    }, [])
+    const link = useScrollIntoView(targetId)
 
     return(
-        <NavLinkStyled variants={linkVariants}>
+        <NavLinkStyled 
+            variants={linkVariants}>
             <a ref={link} >
                 {children}
             </a>
@@ -91,16 +85,17 @@ const NavLink = ({ target, children }) => {
 }
 
 const Navigation = () => {
+
     return(
         <NavigationStyled 
             variants={navigationVariants}
             initial="hidden"
             animate="visible"
             >
-            <NavLink target={"home"}>Home</NavLink>
+            <NavLink targetId={"home"}>Home</NavLink>
             {/* <NavLink target={"biography"}>Biography</NavLink> */}
-            <NavLink target={"projects"}>Projects</NavLink>
-            <NavLink target={"technologies"}>Technologies</NavLink>
+            <NavLink targetId={"projects"}>Projects</NavLink>
+            <NavLink targetId={"technologies"}>Technologies</NavLink>
         </NavigationStyled>
     )
 }
@@ -114,6 +109,7 @@ const Logo = () => {
 }
 
 const Navbar = () => {
+
     const { width } = useWindowDimensions()
     const minWidth = 800
 
