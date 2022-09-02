@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import styled from "styled-components"
 import useWindowDimensions from "../hooks/useWindowDimensions"
+import { motion } from "framer-motion"
 
 const NavbarStyled = styled.div`
     background-color: var(--white);
@@ -18,14 +19,14 @@ const LogoStyled = styled.div`
     }
 `
 
-const NavigationStyled = styled.ul`
+const NavigationStyled = styled(motion.ul)`
     list-style: none;
     display: flex;
     padding-right: 2.5rem;
     margin: 0;
 `
 
-const NavLinkStyled = styled.li`
+const NavLinkStyled = styled(motion.li)`
     font-weight: bold;
     width: max-content;
     display: flex;
@@ -44,6 +45,25 @@ const NavLinkStyled = styled.li`
     }
 `
 
+const navigationVariants = {
+    visible: {
+        transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.1,
+        },
+    },
+    hidden: {
+        transition: {
+            when: "afterChildren",
+        },
+    },
+}
+
+const linkVariants = {
+    hidden: { opacity: 0, translateY: "20%"},
+    visible: { opacity: 1, translateY: 0, transition: {duration: 0.7}},
+}
+
 const NavLink = ({ target, children }) => {
 
     const link = useRef()
@@ -56,15 +76,13 @@ const NavLink = ({ target, children }) => {
 
                 const element = document.getElementById(target)
                 element.scrollIntoView({ behavior: "smooth" })
-
-                console.log("hola")
             })
         }
 
     }, [])
 
     return(
-        <NavLinkStyled>
+        <NavLinkStyled variants={linkVariants}>
             <a ref={link} >
                 {children}
             </a>
@@ -74,7 +92,11 @@ const NavLink = ({ target, children }) => {
 
 const Navigation = () => {
     return(
-        <NavigationStyled>
+        <NavigationStyled 
+            variants={navigationVariants}
+            initial="hidden"
+            animate="visible"
+            >
             <NavLink target={"home"}>Home</NavLink>
             {/* <NavLink target={"biography"}>Biography</NavLink> */}
             <NavLink target={"projects"}>Projects</NavLink>
