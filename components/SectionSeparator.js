@@ -3,23 +3,25 @@ import { motion } from "framer-motion"
 import { forwardRef } from "react"
 
 const SectionSeparatorWrapper = styled(motion.span)`
-    height: ${props => props.height + "px"};
+    height: ${props => props.variant.height + "px"};
     display: flex;
     overflow: hidden;
-    background: ${props => props.background};
+    background: ${props => props.variant.background};
     
     * {
         z-index: 2;
+        transform: ${props => props.variant.transform};
     }
 `
 
 const SectionSeparator = forwardRef(({ type, ...props}, ref) => {
     
-    const styles = {
+    const variants = {
         "Welcome" : {
             height: 110,
             background: "var(--white)",
             img: "/wave.svg",
+            transform: "translateY(5px)"
         },
         "Technologies" : {
             height: 60,
@@ -27,15 +29,14 @@ const SectionSeparator = forwardRef(({ type, ...props}, ref) => {
         },
     }
 
-    const style = styles[type]
+    const variant = variants[type]
 
     return(
         <SectionSeparatorWrapper 
-            height={style.height} 
-            background={style.background}
+            variant={variant}
             ref={ref}
             {...props}>
-            { style.img && <img src={style.img} /> }
+            { variant.img && <img src={variant.img} /> }
         </SectionSeparatorWrapper>
     )
 })

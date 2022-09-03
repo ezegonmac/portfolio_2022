@@ -5,7 +5,7 @@ const SectionStyled = styled(motion.div)`
     padding-inline: 16%;
     position: relative;
     background: ${props => props.background};
-    overflow: hidden;
+    /* overflow: hidden; */
 `
 
 const Section = ({ children, background, id, ...props }) => {
