@@ -83,13 +83,14 @@ const ProjectsSection = ({ projects }) => {
 
             <MiddleWaveDecoration/>
             
-            <Parallax offset={50} stiffness={150} damping={150}>
             <GridSection>
                 {projects.map(
                     p =>
-                    <Card project={p} key={p.title}/>)}
+                    <Parallax offset={80} stiffness={150} damping={150} key={p.title}>
+                        <Card project={p} key={p.title}/>
+                    </Parallax>
+                )}
             </GridSection>
-            </Parallax>
         
         </Section>
     )

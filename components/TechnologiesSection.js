@@ -19,13 +19,15 @@ const gridVariants = {
     visible: {
         transition: {
             when: "beforeChildren",
-            delayChildren: 0.3,
+            delayChildren: 1,
             staggerChildren: 0.1,
         },
     },
     hidden: {
         transition: {
             when: "afterChildren",
+            duration: 1,
+            type: "spring",
         },
     },
 }
@@ -72,10 +74,6 @@ const cardVariants = {
     visible: { 
         opacity: 1,
         rotate: 0, 
-        transition: {
-            duration: 1,
-            type: "spring"
-        }
     },
 }
 
