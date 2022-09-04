@@ -32,7 +32,7 @@ const gridVariants = {
     },
 }
 
-const GridTitle = styled.h2`
+const GridTitleStyled = styled(motion.h2)`
     position: relative;
     margin: 0;
     top: -20px;
@@ -58,6 +58,22 @@ const GridTitle = styled.h2`
         justify-self: start;
     }
 `
+
+const gridTitleVariants = {
+    hidden: { 
+        opacity: 0, 
+        translateX: "200px",
+    },
+    visible: {
+        opacity: 1,
+        translateX: 0,
+        transition: {
+            delay: 0.2,
+            duration: 0.5,
+            ease: "easeOut",
+        }
+    },
+}
 
 const CardStyled = styled(motion.div)`
     border: solid 0.2em white;
@@ -104,12 +120,24 @@ const cardVariants = {
     },
 }
 
+const GridTitle = ({ children }) => {
+    return(
+        <GridTitleStyled
+            variants={gridTitleVariants}
+            initial={"hidden"}
+            whileInView={"visible"}
+            viewport={{ once: true }}
+            >
+            {children}
+        </GridTitleStyled>
+    )
+}
+
 const Card = ({ technology }) => {
     return(
         <CardStyled 
             color={technology.color}
-            variants={cardVariants} 
-
+            variants={cardVariants}
             >
                 <a>
                     {
@@ -135,16 +163,16 @@ const TechnologiesSection = ({ technologyGroups }) => {
                     const array = technologyGroups[title]
 
                     return (
-                        <div
+                        <div key={`div-${title}`} 
                             style={{
                                 marginTop: "20px",
                                 position: "relative", 
                                 display: "grid",
                                 gridTemplateColumns: "repeat(auto-fit, minmax(15rem, 1fr))"}}
                                 >
-                        <GridTitle>{title}</GridTitle>
+                        <GridTitle key={`title-${title}`} >{title}</GridTitle>
                         <SmallGrid 
-                            key={title} 
+                            key={`grid-${title}`}
                             variants={gridVariants}
                             initial={"hidden"}
                             whileInView={"visible"} 
