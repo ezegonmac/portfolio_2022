@@ -2,8 +2,9 @@ import styled from "styled-components"
 import Section from "./Section"
 import Header from "./Header"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { motion } from "framer-motion"
 
-const SmallGrid = styled.section`
+const SmallGrid = styled(motion.div)`
     display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(1rem, 4rem));
 	grid-auto-rows: clamp(3rem,7vw,8rem);
@@ -14,7 +15,22 @@ const SmallGrid = styled.section`
     padding-block: 5rem 0.1rem;
 `
 
-const CardStyled = styled.div`
+const gridVariants = {
+    visible: {
+        transition: {
+            when: "beforeChildren",
+            delayChildren: 0.3,
+            staggerChildren: 0.1,
+        },
+    },
+    hidden: {
+        transition: {
+            when: "afterChildren",
+        },
+    },
+}
+
+const CardStyled = styled(motion.div)`
     border: solid 0.3em white;
     background-color: ${props => props.color};
     aspect-ratio: 1;
@@ -48,9 +64,28 @@ const CardStyled = styled.div`
     }
 `
 
+const cardVariants = {
+    hidden: { 
+        opacity: 0, 
+        rotate: "100deg"
+    },
+    visible: { 
+        opacity: 1,
+        rotate: 0, 
+        transition: {
+            duration: 1,
+            type: "spring"
+        }
+    },
+}
+
 const Card = ({ technology }) => {
     return(
-        <CardStyled color={technology.color}>
+        <CardStyled 
+            color={technology.color}
+            variants={cardVariants} 
+
+            >
                 <a>
                     {
                         technology.icon ? 
@@ -73,7 +108,9 @@ const TechnologiesSection = ({ technologyGroups }) => {
                 technologyGroups.map( 
                     (group, i) => 
 
-                    <SmallGrid key={i}>
+                    <SmallGrid key={i} variants={gridVariants}             initial={"hidden"}
+                    whileInView={"visible"} 
+                    viewport={{ once: true }}>
                         { 
                             group.map(
                                 technology =>

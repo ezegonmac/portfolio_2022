@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 
 // Modified code from:
 // https://samuelkraft.com/blog/spring-parallax-framer-motion-guide
-const Parallax = ({ children, offset = 50 }) => {
+const Parallax = ({ children, offset = 50, stiffness = 400, damping = 90}) => {
   const [elementTop, setElementTop] = useState(0)
   const [clientHeight, setClientHeight] = useState(0)
   const ref = useRef(null)
@@ -17,7 +17,7 @@ const Parallax = ({ children, offset = 50 }) => {
 
   const yRange = useTransform(scrollY, [initial, final], [0, offset])
   // apply a spring to ease the result
-  const y = useSpring(yRange, { stiffness: 400, damping: 90 })
+  const y = useSpring(yRange, { stiffness, damping })
 
   const opacity = useTransform(scrollY, [initial, final], [1, 0.7])
 

@@ -4,6 +4,7 @@ import Link from "next/link"
 import Header from "./Header"
 import { MiddleWaveDecoration } from "./Decorations"
 import { motion } from "framer-motion"
+import Parallax from "./Parallax"
 
 const GridSection = styled(motion.div)`
     display: grid;
@@ -11,20 +12,6 @@ const GridSection = styled(motion.div)`
 	gap: 4.5rem;
     padding: 8rem 2rem 8rem 2rem;
 `
-
-const gridVariants = {
-    visible: {
-        transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.1,
-        },
-    },
-    hidden: {
-        transition: {
-            when: "afterChildren",
-        },
-    },
-}
 
 const CardStyled = styled(motion.div)`
     display: flex;
@@ -96,12 +83,13 @@ const ProjectsSection = ({ projects }) => {
 
             <MiddleWaveDecoration/>
             
-            <GridSection 
-                variants={gridVariants}>
+            <Parallax offset={50} stiffness={150} damping={150}>
+            <GridSection>
                 {projects.map(
                     p =>
                     <Card project={p} key={p.title}/>)}
             </GridSection>
+            </Parallax>
         
         </Section>
     )
