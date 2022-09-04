@@ -47,7 +47,8 @@ export default function Home() {
     },
   ]
 
-  const technologies = [
+  const technologies = {
+    Languages:
     [
       {
         name: "Javascript",
@@ -100,6 +101,7 @@ export default function Home() {
         link: "/",
       },
     ],
+    React:
     [  
       {
         name: "React",
@@ -136,6 +138,7 @@ export default function Home() {
         link: "/",
       },
     ],
+    Spring:
     [
       {
         name: "Spring",
@@ -144,7 +147,7 @@ export default function Home() {
         link: "/",
       },
     ],
-  ]
+  }
 
   return (
     <div style={{backgroundColor: "grey", height: "100vh"}}>

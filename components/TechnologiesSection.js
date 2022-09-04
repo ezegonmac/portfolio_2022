@@ -9,10 +9,10 @@ const SmallGrid = styled(motion.div)`
 	grid-template-columns: repeat(auto-fit, minmax(1rem, 4rem));
 	grid-auto-rows: clamp(3rem,4vw,6rem);
 	gap: max(0.5em, 1vw);
-    padding-inline: clamp(0.1rem, 20%, 12rem);
     align-items: center;
     justify-items: center;
-    padding-block: 3rem 0.1rem;
+    padding-inline: clamp(0.1rem, 15%, 20rem);
+    padding-block: 1rem 2rem;
 `
 
 const gridVariants = {
@@ -31,6 +31,33 @@ const gridVariants = {
         },
     },
 }
+
+const GridTitle = styled.h2`
+    position: relative;
+    margin: 0;
+    top: -20px;
+    left: 5%;
+    font-size: clamp(2rem, 8vw,5rem);
+    color: var(--clr-5-dark);
+    opacity: 70%;
+    justify-self: end;
+    margin-right: 10%;
+    height: 100%;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 18%;
+        bottom: 5%;
+        right: -45px;
+        width: 2.5px;
+        background-color: var(--white);
+    }
+
+    @media only screen and (max-width: 650px) {
+        justify-self: start;
+    }
+`
 
 const CardStyled = styled(motion.div)`
     border: solid 0.2em white;
@@ -103,21 +130,37 @@ const TechnologiesSection = ({ technologyGroups }) => {
             <Header>Technologies</Header>
 
             {
-                technologyGroups.map( 
-                    (group, i) => 
+            Object.keys(technologyGroups).map(
+                title => {
+                    const array = technologyGroups[title]
 
-                    <SmallGrid key={i} variants={gridVariants}             initial={"hidden"}
-                    whileInView={"visible"} 
-                    viewport={{ once: true }}>
-                        { 
-                            group.map(
+                    return (
+                        <div
+                            style={{
+                                marginTop: "20px",
+                                position: "relative", 
+                                display: "grid",
+                                gridTemplateColumns: "repeat(auto-fit, minmax(15rem, 1fr))"}}
+                                >
+                        <GridTitle>{title}</GridTitle>
+                        <SmallGrid 
+                            key={title} 
+                            variants={gridVariants}
+                            initial={"hidden"}
+                            whileInView={"visible"} 
+                            viewport={{ once: true }}
+                            >
+
+                            {array.map(
                                 technology =>
 
                                 <Card technology={technology} key={technology.name}/>
                             )}
-                    </SmallGrid>
-                )
-            }
+                        </SmallGrid>
+                        </div>
+                    )
+                }
+            )}
         
         </Section>
     )
