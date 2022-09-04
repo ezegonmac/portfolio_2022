@@ -84,20 +84,11 @@ const textVariants = {
         visible: { opacity: 1, translateY: 0, transition: {duration: 0.5}},
 }
 
-const useParallax = (value, distance) => {
-    return useTransform(value, [0, 1], [-distance, distance]);
-}
-
 const HomeSection = () => {
-    // const separator = useRef(null);
-    // const { scrollYProgress } = useScroll({ target: separator });
-    // const y = useParallax(scrollYProgress, 100);
 
     return(
         <>
-            <Section id={"home"} background={"var(--white)"} 
-            // style={{ y }}
-            >
+            <Section id={"home"} background={"var(--white)"}>
                 <Parallax offset={100}>
                 <TwoColsSection>
 
@@ -131,9 +122,7 @@ const HomeSection = () => {
                 </Parallax>
             </Section>
             
-            <SectionSeparator type="Welcome" 
-            // ref={separator}
-            />
+            <SectionSeparator type="Welcome"/>
         </>
     )
 }

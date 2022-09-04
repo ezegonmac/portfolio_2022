@@ -19,6 +19,8 @@ const Parallax = ({ children, offset = 50 }) => {
   // apply a spring to ease the result
   const y = useSpring(yRange, { stiffness: 400, damping: 90 })
 
+  const opacity = useTransform(scrollY, [initial, final], [1, 0.7])
+
   useLayoutEffect(() => {
     const element = ref.current
     // save our layout measurements in a function in order to trigger
@@ -35,7 +37,7 @@ const Parallax = ({ children, offset = 50 }) => {
   }, [ref])
 
   return (
-    <motion.div ref={ref} style={{ y }}>
+    <motion.div ref={ref} style={{ y, opacity }} layout>
       {children}
     </motion.div>
   )
