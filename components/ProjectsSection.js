@@ -3,15 +3,30 @@ import Section from "./Section"
 import Link from "next/link"
 import Header from "./Header"
 import { MiddleWaveDecoration } from "./Decorations"
+import { motion } from "framer-motion"
 
-const GridSection = styled.section`
+const GridSection = styled(motion.div)`
     display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
 	gap: 4.5rem;
     padding: 8rem 2rem 8rem 2rem;
 `
 
-const CardStyled = styled.div`
+const gridVariants = {
+    visible: {
+        transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.1,
+        },
+    },
+    hidden: {
+        transition: {
+            when: "afterChildren",
+        },
+    },
+}
+
+const CardStyled = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -42,9 +57,28 @@ const CardStyled = styled.div`
     }
 `
 
+const cardVariants = {
+    hidden: { 
+        opacity: 0, 
+        translateY: "20%"
+    },
+    visible: { 
+        opacity: 1, 
+        translateY: 0, 
+        transition: {
+            duration: 0.7
+        }
+    },
+}
+
 const Card = ({ project }) => {
     return(
-        <CardStyled>
+        <CardStyled 
+            variants={cardVariants} 
+            initial={"hidden"}
+            whileInView={"visible"} 
+            viewport={{ once: true }}
+            >
                 <Link href={project.link}>
                     <img src={project.img}></img>
                 </Link>
@@ -62,7 +96,8 @@ const ProjectsSection = ({ projects }) => {
 
             <MiddleWaveDecoration/>
             
-            <GridSection>
+            <GridSection 
+                variants={gridVariants}>
                 {projects.map(
                     p =>
                     <Card project={p} key={p.title}/>)}
