@@ -7,12 +7,12 @@ import { motion } from "framer-motion"
 const SmallGrid = styled(motion.div)`
     display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(1rem, 4rem));
-	grid-auto-rows: clamp(3rem,7vw,8rem);
-	gap: max(0.5em, 5vw);
+	grid-auto-rows: clamp(3rem,4vw,6rem);
+	gap: max(0.5em, 1vw);
     padding-inline: clamp(0.1rem, 20%, 12rem);
     align-items: center;
     justify-items: center;
-    padding-block: 5rem 0.1rem;
+    padding-block: 3rem 0.1rem;
 `
 
 const gridVariants = {
@@ -33,7 +33,7 @@ const gridVariants = {
 }
 
 const CardStyled = styled(motion.div)`
-    border: solid 0.3em white;
+    border: solid 0.2em white;
     background-color: ${props => props.color};
     aspect-ratio: 1;
     border-radius: 50%;
