@@ -136,7 +136,12 @@ const GridTitle = ({ children }) => {
 
 const Card = ({ technology }) => {
 
-    const {toggleModal} = useModalContext()
+    const {toggleModal, selectTechnology} = useModalContext()
+
+    const handleClick = () => {
+        selectTechnology(technology.name)
+        toggleModal()
+    }
 
     return(
         <CardStyled 
@@ -144,7 +149,7 @@ const Card = ({ technology }) => {
             variants={cardVariants}
             title={technology.name}
             >
-                <a onClick={toggleModal}>
+                <a onClick={handleClick}>
                     <TechnologyIcon technology={technology}/>
                 </a>
         </CardStyled>

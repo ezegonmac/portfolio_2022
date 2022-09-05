@@ -1,7 +1,6 @@
-import { faJs, faReact } from "@fortawesome/free-brands-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useModalContext } from "../context/TechnologyModalContext";
 import TechnologyIcon from "./TechnologyIcon";
@@ -148,45 +147,30 @@ const dropIn = {
     },
 };
 
-const TechnologyModal = () => {
+const TechnologyModal = ({ technologies }) => {
 
-  const {modalIsOpen, closeModal} = useModalContext()
+  const {modalIsOpen, closeModal, selectedTechnology} = useModalContext()
 
-  const technology =       {
-      name: "C",
-      color: "dodgerblue",
-      icon: null,
-      img: "/technologies/c.png",
-      link: "/",
-      description: "Magna amet labore nisi irure incididunt aliqua cillum aliquip. Exercitation qui reprehenderit eiusmod in aute laboris ea est sunt. Dolor sunt veniam eu adipisicing aliquip mollit. Quis in quis magna eiusmod. Non irure quis aliqua ex."
-  }
+  const technology = Object.values(technologies).flat().filter(t => t.name == selectedTechnology)[0]
 
   if (modalIsOpen) {
     return (
-      <AnimatePresence 
-        initial={false}
-        wait={true}
-        onExitComplete={() => null}
-      >
-
-        <Backdrop onClick={closeModal}>
-            <ModalStyled
-              onClick={(e) => e.stopPropagation()}  
-              variants={dropIn}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-            >
-              <ModalHeader handleClose={closeModal}/>
-              <ModalBody>
-                  <h2>{technology.name}</h2>
-                  <p>{technology.description}</p>
-                  <TechnologyIcon technology={technology}/>
-              </ModalBody>
-            </ModalStyled>
-        </Backdrop>
-
-      </AnimatePresence>
+      <Backdrop onClick={closeModal}>
+          <ModalStyled
+            onClick={(e) => e.stopPropagation()}  
+            variants={dropIn}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <ModalHeader handleClose={closeModal}/>
+            <ModalBody>
+                <h2>{technology.name}</h2>
+                <p>{technology.description}</p>
+                <TechnologyIcon technology={technology}/>
+            </ModalBody>
+          </ModalStyled>
+      </Backdrop>
     );
   }
   else {

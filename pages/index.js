@@ -9,6 +9,7 @@ import Head from "next/head"
 import Modal from "../components/TechnologyModal"
 import { useModalContext } from "../context/TechnologyModalContext"
 import TechnologyModal from "../components/TechnologyModal"
+import { AnimatePresence } from "framer-motion"
 
 export default function Home() {
 
@@ -160,14 +161,20 @@ export default function Home() {
 
       <Navbar/>
 
+      <AnimatePresence
+        initial={false}
+        wait={true}
+        onExitComplete={() => null}
+      >
+        <TechnologyModal technologies={technologies}/>
+      </AnimatePresence>
+
       <HomeSection/>
 
       <ProjectsSection projects={projects}/>
 
       <TechnologiesSection technologyGroups={technologies}/>
       <SectionSeparator type="Technologies"/>
-
-      <TechnologyModal/>
 
       <Footer/>
     </div>
