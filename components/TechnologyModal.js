@@ -21,7 +21,7 @@ const BackdropStyled = styled(motion.div)`
   
 const ModalStyled = styled(motion.div)`
     width: clamp(50%, 700px, 90%);
-    background-color: red;
+    background-color: ${props => props.styleColor};
     color: white;
     margin: auto;
     padding: 0 2rem;
@@ -57,6 +57,7 @@ const ModalBody = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(min(15rem, 90%), 1fr));
     margin-bottom: 20px;
     position: relative;
+    min-height: 16em;
 
     & h2 {
         color: var(--white);
@@ -149,33 +150,30 @@ const dropIn = {
 
 const TechnologyModal = ({ technologies }) => {
 
-  const {modalIsOpen, closeModal, selectedTechnology} = useModalContext()
+  const {closeModal, selectedTechnology} = useModalContext()
 
   const technology = Object.values(technologies).flat().filter(t => t.name == selectedTechnology)[0]
 
-  if (modalIsOpen) {
-    return (
-      <Backdrop onClick={closeModal}>
-          <ModalStyled
-            onClick={(e) => e.stopPropagation()}  
-            variants={dropIn}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            <ModalHeader handleClose={closeModal}/>
-            <ModalBody>
-                <h2>{technology.name}</h2>
-                <p>{technology.description}</p>
-                <TechnologyIcon technology={technology}/>
-            </ModalBody>
-          </ModalStyled>
-      </Backdrop>
-    );
-  }
-  else {
-    return null
-  }
+  return (
+    <Backdrop onClick={closeModal}>
+        <ModalStyled
+          onClick={(e) => e.stopPropagation()}  
+          variants={dropIn}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+
+          styleColor={technology.color}
+        >
+          <ModalHeader handleClose={closeModal}/>
+          <ModalBody>
+              <h2>{technology.name}</h2>
+              <p>{technology.description}</p>
+              <TechnologyIcon technology={technology}/>
+          </ModalBody>
+        </ModalStyled>
+    </Backdrop>
+  )
 };
   
 export default TechnologyModal;

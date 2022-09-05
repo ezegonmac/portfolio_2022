@@ -1,15 +1,14 @@
+import { faCss3, faHtml5, faJava, faJs, faPython, faReact } from "@fortawesome/free-brands-svg-icons"
+import { AnimatePresence } from "framer-motion"
+import Head from "next/head"
+import Footer from "../components/Footer"
+import HomeSection from "../components/HomeSection"
 import Navbar from "../components/Navbar"
 import ProjectsSection from "../components/ProjectsSection"
 import SectionSeparator from "../components/SectionSeparator"
 import TechnologiesSection from "../components/TechnologiesSection"
-import HomeSection from "../components/HomeSection"
-import { faReact, faJs, faJava, faPython, faCss3, faHtml5 } from "@fortawesome/free-brands-svg-icons"
-import Footer from "../components/Footer"
-import Head from "next/head"
-import Modal from "../components/TechnologyModal"
-import { useModalContext } from "../context/TechnologyModalContext"
 import TechnologyModal from "../components/TechnologyModal"
-import { AnimatePresence } from "framer-motion"
+import { useModalContext } from "../context/TechnologyModalContext"
 
 export default function Home() {
 
@@ -153,6 +152,8 @@ export default function Home() {
     ],
   }
 
+  const {modalIsOpen} = useModalContext()
+
   return (
     <div style={{position: "relative"}}>
       <Head>
@@ -161,12 +162,8 @@ export default function Home() {
 
       <Navbar/>
 
-      <AnimatePresence
-        initial={false}
-        wait={true}
-        onExitComplete={() => null}
-      >
-        <TechnologyModal technologies={technologies}/>
+      <AnimatePresence initial={false} wait={true} onExitComplete={() => null}>
+        {modalIsOpen && <TechnologyModal technologies={technologies}/>}
       </AnimatePresence>
 
       <HomeSection/>
