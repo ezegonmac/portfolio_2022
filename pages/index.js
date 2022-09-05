@@ -6,6 +6,9 @@ import HomeSection from "../components/HomeSection"
 import { faReact, faJs, faJava, faPython, faCss3, faHtml5 } from "@fortawesome/free-brands-svg-icons"
 import Footer from "../components/Footer"
 import Head from "next/head"
+import Modal from "../components/TechnologyModal"
+import { useModalContext } from "../context/TechnologyModalContext"
+import TechnologyModal from "../components/TechnologyModal"
 
 export default function Home() {
 
@@ -150,7 +153,7 @@ export default function Home() {
   }
 
   return (
-    <div style={{backgroundColor: "grey", height: "100vh"}}>
+    <div style={{position: "relative"}}>
       <Head>
         <title>ezegonmac</title>
       </Head>
@@ -163,6 +166,8 @@ export default function Home() {
 
       <TechnologiesSection technologyGroups={technologies}/>
       <SectionSeparator type="Technologies"/>
+
+      <TechnologyModal/>
 
       <Footer/>
     </div>

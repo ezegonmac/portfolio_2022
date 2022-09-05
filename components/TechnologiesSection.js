@@ -1,8 +1,9 @@
 import styled from "styled-components"
 import Section from "./Section"
 import Header from "./Header"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { motion } from "framer-motion"
+import TechnologyIcon from "./TechnologyIcon"
+import { useModalContext } from "../context/TechnologyModalContext"
 
 const SmallGrid = styled(motion.div)`
     display: grid;
@@ -104,8 +105,8 @@ const CardStyled = styled(motion.div)`
     }
 
     &:hover {
-        transform: scale(1.03);
-        transition: 0.1s ease-in-out;
+        scale: 1.05;
+        transition: 0.2s ease-in-out;
     }
 `
 
@@ -134,18 +135,17 @@ const GridTitle = ({ children }) => {
 }
 
 const Card = ({ technology }) => {
+
+    const {toggleModal} = useModalContext()
+
     return(
         <CardStyled 
             color={technology.color}
             variants={cardVariants}
+            title={technology.name}
             >
-                <a>
-                    {
-                        technology.icon ? 
-                        <FontAwesomeIcon icon={technology.icon} inverse/>
-                        :
-                        <img src={technology.img}/>
-                    }
+                <a onClick={toggleModal}>
+                    <TechnologyIcon technology={technology}/>
                 </a>
         </CardStyled>
     )
