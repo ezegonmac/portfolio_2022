@@ -114,7 +114,8 @@ const HomeSection = () => {
                             variants={textVariants}
                             >
                             I am an enthusiastic software student finishing his career in Seville, Spain.
-                            I am currently trying to get better at react, coding creative web apps like this and some others shown down below
+                            I am in love with building creative webs like this and others shown down below.
+                            I also study AI and other programming branches.
                         </Paragraph>
                     </RightSection>
 
