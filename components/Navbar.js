@@ -1,10 +1,10 @@
+import { motion } from "framer-motion"
 import styled from "styled-components"
-import useWindowDimensions from "../hooks/useWindowDimensions"
-import { motion, useScroll, useTransform } from "framer-motion"
 import useScrollIntoView from "../hooks/useScrollIntoView"
-import { useEffect } from "react"
+import useShrinkOnScroll from "../hooks/useShrinkOnScroll"
+import useWindowDimensions from "../hooks/useWindowDimensions"
 
-const NavbarStyled = styled.div`
+const NavbarStyled = styled(motion.div)`
     position: fixed;
     left: 0;
     right: 0;
@@ -17,11 +17,15 @@ const NavbarStyled = styled.div`
 `
 
 const LogoStyled = styled.div`
-    display: flex;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
 
     & img {
-        width: 4em;
-        height: 4em;
+        width: 3.5em;
+        height: 3.5em;
+        min-width: 2.3rem;
+        min-height: 2.3rem;
     }
 `
 
@@ -36,7 +40,7 @@ const NavLinkStyled = styled(motion.li)`
     font-weight: bold;
     width: max-content;
     display: flex;
-    padding: 1.5em 2.2em 0.8em 2.3em ;
+    padding: 1.5em 2.2rem 0.8em 2.3rem ;
     
     & a {
         color: var(--clr-2-light);
@@ -110,11 +114,17 @@ const Logo = () => {
 
 const Navbar = () => {
 
+    // disable nav for small devices
     const { width } = useWindowDimensions()
     const minWidth = 800
 
+    const animate = useShrinkOnScroll()
+
     return(
-        <NavbarStyled>
+        <NavbarStyled
+            initial={{fontSize: "1rem"}}
+            animate={animate}
+            >
             <Logo/>
             { 
             width > minWidth ? 

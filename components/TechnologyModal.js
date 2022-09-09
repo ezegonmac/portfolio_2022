@@ -21,7 +21,7 @@ const BackdropStyled = styled(motion.div)`
   
 const ModalStyled = styled(motion.div)`
     width: clamp(50%, 700px, 90%);
-    background-color: ${props => props.styleColor};
+    background-color: ${props => props.stylecolor};
     color: white;
     margin: auto;
     padding: 0 2rem;
@@ -163,7 +163,7 @@ const TechnologyModal = ({ technologies }) => {
           animate="visible"
           exit="exit"
 
-          styleColor={technology.color}
+          stylecolor={technology.color}
         >
           <ModalHeader handleClose={closeModal}/>
           <ModalBody>
