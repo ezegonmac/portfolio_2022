@@ -94,6 +94,7 @@ const CardStyled = styled(motion.div)`
     justify-content: center;
     box-shadow: inset 3px 3px 2px 0 rgb(100 100 100/ 20%);
     height: 100%;
+    cursor: pointer;
     
     & a {
         display: grid;
@@ -111,6 +112,9 @@ const CardStyled = styled(motion.div)`
         height: 70%;
     }
 
+    &:hover {
+        scale: 1.05;
+    }
 `
 
 const cardVariants = {

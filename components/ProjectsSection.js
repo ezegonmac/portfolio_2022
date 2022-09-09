@@ -18,6 +18,7 @@ const CardStyled = styled(motion.div)`
     flex-direction: column;
     justify-content: space-between;
     z-index: 1;
+    cursor: pointer;
 
     & img {
         max-height: 75%;
@@ -37,11 +38,6 @@ const CardStyled = styled(motion.div)`
         font-weight: 500;
         font-size: 1.1rem;
     }
-
-    &:hover {
-        transform: scale(1.03);
-        transition: 0.1s ease-in-out;
-    }
 `
 
 const cardVariants = {
@@ -56,6 +52,13 @@ const cardVariants = {
             duration: 0.7
         }
     },
+    hovered: {
+        scale: 1.03,
+        transition: {
+            duration: 0.2,
+            type: "spring",
+        }
+    }
 }
 
 const Card = ({ project }) => {
@@ -64,6 +67,7 @@ const Card = ({ project }) => {
             variants={cardVariants} 
             initial={"hidden"}
             whileInView={"visible"} 
+            whileHover={"hovered"}
             viewport={{ once: true }}
             >
                 <Link href={project.link}>
