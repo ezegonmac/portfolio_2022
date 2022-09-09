@@ -35,6 +35,11 @@ const projects = [
       link: "https://github.com/ezegonmac/dp1-2021-2022-l8-1/",
       img: "/projects/sevenislands.jpg"
     },
+    {
+      title: "IISSI2 Project",
+      link: "https://github.com/ezegonmac/Proyecto-curso-IISSI2/",
+      img: "/projects/iissi2.png"
+    },
 ]
 
 export default projects
