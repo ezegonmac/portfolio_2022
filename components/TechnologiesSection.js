@@ -5,6 +5,13 @@ import { motion } from "framer-motion"
 import TechnologyIcon from "./TechnologyIcon"
 import { useModalContext } from "../context/TechnologyModalContext"
 
+const SmallGridSection = styled.div`
+    margin-top: 20px;
+    position: relative; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+`
+
 const SmallGrid = styled(motion.div)`
     display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(1rem, 4rem));
@@ -104,10 +111,6 @@ const CardStyled = styled(motion.div)`
         height: 70%;
     }
 
-    &:hover {
-        scale: 1.05;
-        transition: 0.2s ease-in-out;
-    }
 `
 
 const cardVariants = {
@@ -121,7 +124,7 @@ const cardVariants = {
     },
 }
 
-const GridTitle = ({ children }) => {
+const GridTitle = ({ children}) => {
     return(
         <GridTitleStyled
             variants={gridTitleVariants}
@@ -134,7 +137,7 @@ const GridTitle = ({ children }) => {
     )
 }
 
-const Card = ({ technology }) => {
+const Card = ({ technology, ...props }) => {
 
     const {toggleModal, selectTechnology} = useModalContext()
 
@@ -144,10 +147,11 @@ const Card = ({ technology }) => {
     }
 
     return(
-        <CardStyled 
+        <CardStyled
             color={technology.color}
             variants={cardVariants}
             title={technology.name}
+            {...props}
             >
                 <a onClick={handleClick}>
                     <TechnologyIcon technology={technology}/>
@@ -168,29 +172,23 @@ const TechnologiesSection = ({ technologyGroups }) => {
                     const array = technologyGroups[title]
 
                     return (
-                        <div key={`div-${title}`} 
-                            style={{
-                                marginTop: "20px",
-                                position: "relative", 
-                                display: "grid",
-                                gridTemplateColumns: "repeat(auto-fit, minmax(15rem, 1fr))"}}
+                        <SmallGridSection key={`div-${title}`}>
+                            <GridTitle key={`title-${title}`} >{title}</GridTitle>
+                            <SmallGrid
+                                key={`grid-${title}`}
+                                variants={gridVariants}
+                                initial={"hidden"}
+                                whileInView={"visible"}
+                                viewport={{ once: true }}
                                 >
-                        <GridTitle key={`title-${title}`} >{title}</GridTitle>
-                        <SmallGrid 
-                            key={`grid-${title}`}
-                            variants={gridVariants}
-                            initial={"hidden"}
-                            whileInView={"visible"} 
-                            viewport={{ once: true }}
-                            >
 
-                            {array.map(
-                                technology =>
+                                {array.map(
+                                    technology =>
 
-                                <Card technology={technology} key={technology.name}/>
-                            )}
-                        </SmallGrid>
-                        </div>
+                                    <Card technology={technology} key={technology.name}/>
+                                )}
+                            </SmallGrid>
+                        </SmallGridSection>
                     )
                 }
             )}
