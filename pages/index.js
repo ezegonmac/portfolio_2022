@@ -16,7 +16,7 @@ export default function Home() {
   const {modalIsOpen} = useModalContext()
 
   return (
-    <div style={{position: "relative"}}>
+    <div style={{position: "relative", overflowX: "hidden"}}>
       <Head>
         <title>ezegonmac</title>
       </Head>
