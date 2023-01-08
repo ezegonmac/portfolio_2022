@@ -19,10 +19,10 @@ const technologies = {
     },
     {
         name: "Python",
-        color: "gold",
+        color: "#efcb00",
         icon: faPython,
         link: "/",
-        description: "My first language learned. I started by reading a book on big data treatment using python. Since then I have used data processing libraries like Pandas, Matplotlib, Numpy, Keras or Tensorflow.",
+        description: "My first language learned. I started by reading a book on big data treatment using python. \n\n Since then I have used data processing libraries like Pandas, Matplotlib, Numpy, Keras or Tensorflow. \n\n I have also used it to build apps using Django, scrape webs using Bautifulsoup and create SQL and no SQL databases.",
     },
     {
         name: "SQL",
@@ -62,8 +62,8 @@ const technologies = {
         description: "I started using raw CSS3, then I have learnt to write it for preprocessors like Sass and LESS, as well as using methodologies like BEM. \n\n I have also used CSS frameworks such as Bootstrap, Tailwind and Chakra UI. \n\n In summary, I think have this language is one of my strengths becose I have mastered the great mayority of its branches.",
     },
     ],
-    React:
-    [  
+    Web:
+    [
     {
         name: "React",
         color: "cornflowerblue",
@@ -71,6 +71,23 @@ const technologies = {
         link: "/",
         description: "I have been learning react for over a year now, when I acquired an online course on Udemy. Since then I have fell in love with developing apps using his great variety of libraries.",
     },
+    {
+        name: "Django",
+        color: "mediumseagreen",
+        img: "/technologies/django.png",
+        link: "/",
+        description: "I have learnt this framework in 2022, and built few webs already. \n\n Most of them as as a team with other developers, learning from frontend to backend, deploying, testing and much more.",
+    },
+    {
+        name: "Spring",
+        color: "lightgreen",
+        img: "/technologies/spring.png",
+        link: "/",
+        description: "I have built many webs using Spring Boot from small to big scale, for instance a cool web board game with players accounts and social interactions. \n\n Also, my firsts teamworks were using this technology.",
+    },
+    ],
+    React:
+    [  
     {
         name: "Next JS",
         color: "mediumseagreen",
@@ -103,16 +120,6 @@ const technologies = {
         link: "/",
         description: "I have learnt this framework in my first React course. \n\n I have used it very little although I have cool ideas for practicing it.",
     },
-    ],
-    Spring:
-    [
-    {
-        name: "Spring",
-        color: "mediumseagreen",
-        img: "/technologies/spring.png",
-        link: "/",
-        description: "I have built many webs using Spring Boot from small to big scale, for instance a cool web board game with players accounts and social interactions. \n\n Also, my firsts teamworks were using this technology.",
-        },
     ],
 }
 
