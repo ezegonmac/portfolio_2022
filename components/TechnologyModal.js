@@ -44,6 +44,7 @@ const ModalHeaderStyled = styled.div`
         height: 100%;
         color: white;
         z-index: 12;
+        cursor: pointer;
 
         & * {
             height: 100%;
